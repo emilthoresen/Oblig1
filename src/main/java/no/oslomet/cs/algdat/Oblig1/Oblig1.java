@@ -3,6 +3,7 @@ package no.oslomet.cs.algdat.Oblig1;
 ////// Løsningsforslag Oblig 1 ////////////////////////
 
 import java.lang.UnsupportedOperationException;
+import java.util.Arrays;
 
 public class Oblig1 {
     private Oblig1() {
@@ -71,7 +72,24 @@ public class Oblig1 {
 
     ///// Oppgave 3 //////////////////////////////////////
     public static int antallUlikeUsortert(int[] a) {
-        throw new UnsupportedOperationException();
+        int antall = 0;
+
+        if (a.length == 0){
+        }
+        for (int i = 0; i < a.length; i++){
+            boolean ulikt_tall = false;
+
+            for (int k = 0; k < i; k++){
+                if (a[k] == a[i]){
+                    ulikt_tall = true;
+
+                }
+            }
+            if (!ulikt_tall){
+                antall++;
+            }
+        }
+        return antall;
     }
 
     ///// Oppgave 4 //////////////////////////////////////
