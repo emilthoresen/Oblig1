@@ -5,16 +5,47 @@ package no.oslomet.cs.algdat.Oblig1;
 import java.lang.UnsupportedOperationException;
 
 public class Oblig1 {
-    private Oblig1() {}
+    private Oblig1() {
+    }
 
     ///// Oppgave 1 //////////////////////////////////////
     public static int maks(int[] a) {
-        throw new UnsupportedOperationException();
+        String feil_melding = "Tabellen er tom";
+        int maks_verdi = 0;
+
+        if (a.length < 1){
+            throw new java.util.NoSuchElementException(feil_melding);
+
+        }
+        else if(a.length == 1){
+            maks_verdi = a[0];
+        }
+        for (int i = 1; i < a.length; i++){
+            if(a[i] < a[i-1]){
+                int verdi = a[i];
+                a[i] = a[i-1];
+                a[i-1] = verdi;
+            }
+            maks_verdi  = a[i];
+        }
+        return maks_verdi ;
     }
 
     public static int ombyttinger(int[] a) {
-        throw new UnsupportedOperationException();
+        int antall = 0;
+
+        for (int i = 1; i < a.length; i++){
+            if (a[i] < a[i-1]){
+                antall++;
+
+                int verdi = a[i];
+                a[i] = a[i-1];
+                a[i-1] = verdi;
+            }
+        }
+        return antall;
     }
+
 
     ///// Oppgave 2 //////////////////////////////////////
     public static int antallUlikeSortert(int[] a) {
