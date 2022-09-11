@@ -49,8 +49,25 @@ public class Oblig1 {
 
     ///// Oppgave 2 //////////////////////////////////////
     public static int antallUlikeSortert(int[] a) {
-        throw new UnsupportedOperationException();
+        String feil_melding = "Array er ikke sortert";
+        int antall = 1;
+
+        if (a.length == 0){
+            antall = 0;
+        }
+
+        for(int i = 1; i < a.length; i++){
+            if (a[i] < a[i-1]){
+                throw new IllegalStateException(feil_melding);
+            }
+
+            if ( a[i-1] != a[i]){
+                antall++;
+            }
+        }
+        return antall;
     }
+
 
     ///// Oppgave 3 //////////////////////////////////////
     public static int antallUlikeUsortert(int[] a) {
